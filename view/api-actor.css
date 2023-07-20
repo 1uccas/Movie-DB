@@ -1,0 +1,63 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+#container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
+}
+#biography{
+    max-height: 4em; /* Altura equivalente a 3 linhas de texto */
+    overflow: hidden;
+    line-height: 1.2em;
+    white-space: pre-line;
+    text-align: justify;
+}
+#not-biography{
+    float: left;
+    width: 950px;
+    text-align: center;
+}
+#box-actor{
+    font-size: 15px;
+    width: auto;
+    height: 500px;
+}
+#picture-actor{
+    width: 300px;
+    height: auto;
+    padding: 10px;
+    border-radius: 15px;
+    float: left; /* Alinhar a imagem à esquerda */
+    margin-right: 10px;
+}
+#div-acting{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    overflow-x: scroll; /* Adiciona a barra de rolagem horizontal */
+    width: 100%;
+}
+#movies{
+    overflow: hidden;
+    width: 150px;
+    height: 300px;
+    margin-top: 3rem;
+}
+#div-acting img{
+    border-radius: 10px;
+    flex: 0 0 auto; /* Impede que as imagens se redimensionem */
+    width: 140px; /* Define a largura das imagens */
+    height: 250px; /* Permite que a altura das imagens seja ajustada proporcionalmente */
+    margin-right: 10px;
+    display: block;
+}
+#text{
+    flex-basis: 100%;
+    padding-top: 15px;
+    display: block;
+    text-align: center;
+}
