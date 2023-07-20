@@ -23,7 +23,8 @@ fetch(`https://api.themoviedb.org/3/person/${id_actor}?language=pt-BR`, options)
         const text_biography = document.querySelector('#text-biography');
         const biography = document.querySelector('#biography');
         const gender_actor = document.querySelector('#gender-actor');
-
+        const known_for_departament = documment.querySelector('#known_for_departament');
+        
         const paragraphs = dadosAtor.biography.split("\n");
         const selectedParagraphs = paragraphs.slice(0, 5); // Seleciona a partir do terceiro parágrafo em diante
         const selectedBiography = selectedParagraphs.join("\n");
