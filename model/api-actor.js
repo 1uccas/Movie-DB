@@ -23,7 +23,7 @@ fetch(`https://api.themoviedb.org/3/person/${id_actor}?language=pt-BR`, options)
         const text_biography = document.querySelector('#text-biography');
         const biography = document.querySelector('#biography');
         const gender_actor = document.querySelector('#gender-actor');
-        const known_for_departament = documment.querySelector('#known_for_departament');
+        const known_for_departament = document.querySelector('#known_for_departament');
         
         const paragraphs = dadosAtor.biography.split("\n");
         const selectedParagraphs = paragraphs.slice(0, 5); // Seleciona a partir do terceiro parágrafo em diante
@@ -102,33 +102,40 @@ fetch(`https://api.themoviedb.org/3/person/${id_actor}/combined_credits?language
        
 
         if (data_movies.cast && Array.isArray(data_movies.cast) && data_movies.cast.length > 0) {
+            // Suponha que você tenha uma lista de filmes da API chamada 'movies' com objetos que possuem título e contagem de votos.
             const movies = data_movies.cast;
-            const div_acting = document.getElementById('div-acting')
-            for (let movie = 0; movie < movies.length; movie++) {//Percorrer o array inteiro
-                const path_movie = `https://image.tmdb.org/t/p/original${data_movies.cast[movie].poster_path}`;
-                if(data_movies.cast[movie].poster_path == null){
-                    const movie_not_found = "../image/404-movie-image/movie-not-found.jpg"
-                    const no_found =  `<div id='movies'>
+            const div_acting = document.getElementById('div-acting');
+
+            // Classifique os filmes com base na contagem de votos em ordem decrescente.
+            movies.sort((a, b) => b.vote_count - a.vote_count);
+
+            // Iterar pelos filmes classificados e exibi-los em ordem.
+            for (let movie = 0; movie < Math.min(movies.length, 8); movie++) {
+            const path_movie = `https://image.tmdb.org/t/p/original${movies[movie].poster_path}`;
+            const title = movies[movie].title || movies[movie].original_name;
+
+            if (movies[movie].poster_path == null) {
+                const movie_not_found = "../image/404-movie-image/movie-not-found.jpg";
+                const no_found = `
+                <div id='movies'>
                     <img id='movie-path' src='${movie_not_found}'></img>
-                    <label id='text'>${data_movies.cast[movie].title}</label>
+                    <label id='text'>${title}</label>
                 </div>
-                    `;
-                    div_acting.innerHTML += no_found;
-                }else{
-                    const pgHTML = `
-                        <div id='movies'>
-                            <img id='movie-path' src='${path_movie}'></img>
-                            <label id='text'>${data_movies.cast[movie].title}</label>
-                        </div>
+                `;
+                div_acting.innerHTML += no_found;
+            } else {
+                const pgHTML = `
+                <div id='movies'>
+                    <img id='movie-path' src='${path_movie}'></img>
+                    <label id='text'>${title}</label>
+                </div>
                 `;
                 div_acting.innerHTML += pgHTML;
-                }
-                
-                
-                if (movie === 7) {//Caso o array chegue na posição 8, pare.
-                    break;
-                }
             }
+
+            console.log(`Contagem de Votos do ${title} -> ${movies[movie].vote_count}`);
+            }
+
           } else {
             console.log('Nenhum filme encontrado para este ator.');
             return div_acting.innerHTML += '<p>Nenhum filme encontrado para este ator</p>';
