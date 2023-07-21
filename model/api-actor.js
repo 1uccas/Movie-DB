@@ -24,6 +24,7 @@ fetch(`https://api.themoviedb.org/3/person/${id_actor}?language=pt-BR`, options)
         const biography = document.querySelector('#biography');
         const gender_actor = document.querySelector('#gender-actor');
         const known_for_departament = document.querySelector('#known_for_departament');
+        const place_of_birth = document.querySelector('#place-of-birth');
         
         const paragraphs = dadosAtor.biography.split("\n");
         const selectedParagraphs = paragraphs.slice(0, 5); // Seleciona a partir do terceiro parágrafo em diante
@@ -56,6 +57,14 @@ fetch(`https://api.themoviedb.org/3/person/${id_actor}?language=pt-BR`, options)
         } else {
             known_for_departament.innerHTML = `Conhecido por: ${dadosAtor.known_for_department}`;
             box_actor.appendChild(known_for_departament);
+        }
+
+        if (dadosAtor.place_of_birth == null || dadosAtor.place_of_birth == "") {
+            place_of_birth.innerHTML = "Local de Nascimento: Indisponivel";
+            box_actor.appendChild(place_of_birth);
+        } else {
+            place_of_birth.innerHTML = `Local de Nascimento: ${dadosAtor.place_of_birth}`;
+            box_actor.appendChild(place_of_birth);
         }
 
         if (dadosAtor.birthday == null || dadosAtor.birthday == "") {
