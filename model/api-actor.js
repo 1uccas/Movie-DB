@@ -50,6 +50,14 @@ fetch(`https://api.themoviedb.org/3/person/${id_actor}?language=pt-BR`, options)
             box_actor.appendChild(name_actor)
         }
 
+        if (dadosAtor.known_for_department == null || dadosAtor.known_for_department == "") {
+            known_for_departament.innerHTML = "Conhecido por: Indisponivel";
+            box_actor.appendChild(known_for_departament);
+        } else {
+            known_for_departament.innerHTML = `Conhecido por: ${dadosAtor.known_for_department}`;
+            box_actor.appendChild(known_for_departament);
+        }
+
         if (dadosAtor.birthday == null || dadosAtor.birthday == "") {
             birthday_actor.innerHTML = `Nascimento: `;
         } else {
@@ -133,7 +141,7 @@ fetch(`https://api.themoviedb.org/3/person/${id_actor}/combined_credits?language
                 div_acting.innerHTML += pgHTML;
             }
 
-            console.log(`Contagem de Votos do ${title} -> ${movies[movie].vote_count}`);
+            //console.log(`Contagem de Votos do ${title} -> ${movies[movie].vote_count}`);
             }
 
           } else {
