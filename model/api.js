@@ -69,17 +69,18 @@ function renderResults(data) {
     });
 }
 
-function fetchActors(currentPage) {
-  const url = (`https://api.themoviedb.org/3/person/popular?language=pt-BR&page=${states.page}`);
-
-fetch(url, options)
-    .then(response => response.json())
-    .then(data => {
-        console.log(data.results);
-        renderResults(data)
-    })
-    .catch(err => console.log(err));
-}
+async function fetchActors(currentPage) {
+    const url = `https://api.themoviedb.org/3/person/popular?language=pt-BR&page=${currentPage}`;
+  
+    try {
+      const response = await fetch(url, options);
+      const data = await response.json();
+      console.log(data.results);
+      renderResults(data);
+    } catch (err) {
+      console.log(err);
+    }
+} 
 
 const html = {
     get(element) {
