@@ -15,6 +15,7 @@ fetch(`https://api.themoviedb.org/3/person/${id_actor}?language=pt-BR`, options)
     .then(dadosAtor => {
         const container = document.getElementById('container');
         const box_actor = document.getElementById('box-actor');
+        const div_biography = document.getElementById('div-biography');
         
         document.title = dadosAtor.name
         const picture_actor = document.querySelector('#picture-actor');
@@ -97,9 +98,10 @@ fetch(`https://api.themoviedb.org/3/person/${id_actor}?language=pt-BR`, options)
             box_actor.appendChild(biography);
         } else {
             text_biography.innerHTML = "Biografia:";
-            box_actor.appendChild(text_biography);
             biography.innerHTML = selectedBiography;
-            box_actor.appendChild(biography);
+            box_actor.appendChild(text_biography);
+            div_biography.appendChild(biography);
+            box_actor.appendChild(div_biography);
         }
         
         //const paginaHTML = ;

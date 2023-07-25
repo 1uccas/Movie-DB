@@ -10,6 +10,9 @@ body{
     text-align: justify;
     height: 34rem;
 }
+#div-biography{
+    width: 60rem;
+}
 #biography{
     max-height: 4em; /* Altura equivalente a 3 linhas de texto */
     overflow: hidden;
