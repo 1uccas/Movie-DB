@@ -17,6 +17,8 @@ body{
 
 .grid-item {
     text-align: center;
+    width: 180px;
+    height: 380px;
 }
 
 #grid-container a{
@@ -40,7 +42,9 @@ body{
 }
 
 .grid-item p {
+    text-align: center;
     margin-top: 10px;
+    width: 190px;
 }
 
 #pagination button{
