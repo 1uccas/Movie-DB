@@ -6,17 +6,28 @@ document.write(
             margin: 0;
         }
         #header-box-container{
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: gray;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, gray, white); 
             font-size: 45px;
             text-align: center;
             padding: 1rem;
-            margin-bottom: 10px;
+            margin-bottom: 50px;
+            color: black;
+            font-weight: 400;
+        }
+        #header-box-container header{
+            margin-left: 50px;
+        }
+        #header-box-container img{
+            position: absolute;
+            margin-top: -10px;
+            margin-left: -75px;
+            width: 70px;
         }
     </style>
 
     <div id="header-box-container">
-        <header>Movies-Extreme</header>
+        <header><img src="/image/header-image/camaleao.png"></img> Movies-Extreme</header>
     </div>
     `
 )
