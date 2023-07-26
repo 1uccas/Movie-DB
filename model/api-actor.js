@@ -109,19 +109,13 @@ fetch(`https://api.themoviedb.org/3/person/${id_actor}?language=pt-BR`, options)
             div_more_informations.appendChild(gender_actor)
         }
 
-       
-        
-        //const paginaHTML = ;
-        // Exibir a página HTML na janela do navegador
-        //container.innerHTML += paginaHTML;
         console.log(dadosAtor);
-
-        //Caso não haja nenhuma biografia para o ator ou atriz
         
     })
     .catch(error => {
     console.error('Erro ao obter os dados do ator:', error);
     });
+
 fetch(`https://api.themoviedb.org/3/person/${id_actor}/combined_credits?language=pt-BR`, options)
     .then(response => response.json())
     .then(data_movies => {
