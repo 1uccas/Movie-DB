@@ -2,6 +2,8 @@ document.write(
     `
     <style>
         body{
+            padding: 0;
+            margin: 0;
         }
         #header-box-container{
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
