@@ -1,6 +1,10 @@
 body{
     margin: 0;
     padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: black;
+    color: white;
+    
 }
 #container{
     display: flex;
@@ -8,7 +12,7 @@ body{
     justify-content: center;
     overflow: auto;
     text-align: justify;
-    height: 34rem;
+    height: auto;
 }
 #div-biography{
     width: 60rem;
@@ -19,6 +23,7 @@ body{
     line-height: 1.2em;
     white-space: pre-line;
     text-align: justify;
+    cursor: text;
 }
 #not-biography{
     float: left;
@@ -28,9 +33,29 @@ body{
 #box-actor{
     font-size: 15px;
     width: auto;
-    height: 500px;
+    height: 510px;
+}
+#container-more-informations{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#more-informations{
+    display: flex;
+    flex-direction: column;
+    margin-right: 1120px;
+    margin-left: 150px;
+    height: auto;
+    min-width: 300px;
+    width: 300px;
+}
+#more-informations label{
+    padding-bottom: 10px;
 }
 #picture-actor{
+    display: flex;
+    flex-direction: column;
     width: 300px;
     height: auto;
     padding: 10px;
@@ -45,12 +70,17 @@ body{
     justify-content: center;
     overflow-x: scroll; /* Adiciona a barra de rolagem horizontal */
     width: 100%;
+    overflow-x: hidden;
 }
 #movies{
     overflow: hidden;
     width: 150px;
-    height: 300px;
+    height: 330px;
     margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 #div-acting img{
     border-radius: 10px;

@@ -16,6 +16,8 @@ fetch(`https://api.themoviedb.org/3/person/${id_actor}?language=pt-BR`, options)
         const container = document.getElementById('container');
         const box_actor = document.getElementById('box-actor');
         const div_biography = document.getElementById('div-biography');
+        const container_more_informations = document.getElementById('container-more-informations');
+        const div_more_informations = document.getElementById('more-informations');
         
         document.title = dadosAtor.name
         const picture_actor = document.querySelector('#picture-actor');
@@ -41,6 +43,7 @@ fetch(`https://api.themoviedb.org/3/person/${id_actor}?language=pt-BR`, options)
             picture_actor.src = `${path}`
             container.appendChild(picture_actor)
         }
+        
 
         container.appendChild(box_actor)
 
@@ -50,46 +53,6 @@ fetch(`https://api.themoviedb.org/3/person/${id_actor}?language=pt-BR`, options)
         } else {
             name_actor.innerHTML = `${dadosAtor.name}`
             box_actor.appendChild(name_actor)
-        }
-
-        if (dadosAtor.known_for_department == null || dadosAtor.known_for_department == "") {
-            known_for_departament.innerHTML = "Conhecido por: Indisponivel";
-            box_actor.appendChild(known_for_departament);
-        } else {
-            known_for_departament.innerHTML = `Conhecido por: ${dadosAtor.known_for_department}`;
-            box_actor.appendChild(known_for_departament);
-        }
-
-        if (dadosAtor.place_of_birth == null || dadosAtor.place_of_birth == "") {
-            place_of_birth.innerHTML = "Local de Nascimento: Indisponivel";
-            box_actor.appendChild(place_of_birth);
-        } else {
-            place_of_birth.innerHTML = `Local de Nascimento: ${dadosAtor.place_of_birth}`;
-            box_actor.appendChild(place_of_birth);
-        }
-
-        if (dadosAtor.birthday == null || dadosAtor.birthday == "") {
-            birthday_actor.innerHTML = `Nascimento: `;
-        } else {
-            birthday_actor.innerHTML = `Nascimento: ${dadosAtor.birthday}`;
-        }
-
-        box_actor.appendChild(birthday_actor);
-
-        const generos = ['Não-binário', 'Feminino', "Masculino"];
-
-        if (dadosAtor.gender === 0) {
-            gender_actor.innerHTML =  `Genêro: ${generos[0]}`
-            box_actor.appendChild(gender_actor)
-        }else if (dadosAtor.gender === 1){
-            gender_actor.innerHTML =  `Genêro: ${generos[1]}`
-            box_actor.appendChild(gender_actor)
-        }else if(dadosAtor.gender === 2){
-            gender_actor.innerHTML =  `Genêro: ${generos[2]}`
-            box_actor.appendChild(gender_actor)
-        } else {
-            gender_actor.innerHTML =  `Genêro Indisponivel`
-            box_actor.appendChild(gender_actor)
         }
 
         if (dadosAtor.biography == null || dadosAtor.biography == "") {
@@ -103,6 +66,50 @@ fetch(`https://api.themoviedb.org/3/person/${id_actor}?language=pt-BR`, options)
             div_biography.appendChild(biography);
             box_actor.appendChild(div_biography);
         }
+
+        container_more_informations.appendChild(div_more_informations)
+
+        if (dadosAtor.known_for_department == null || dadosAtor.known_for_department == "") {
+            known_for_departament.innerHTML = "<strong>Conhecido(a) por</strong>: <br><strong>Indisponivel</strong>";
+            div_more_informations.appendChild(known_for_departament)
+        } else {
+            known_for_departament.innerHTML = `<strong>Conhecido(a) por</strong>: <br>${dadosAtor.known_for_department}`;
+            div_more_informations.appendChild(known_for_departament)
+        }
+
+        if (dadosAtor.place_of_birth == null || dadosAtor.place_of_birth == "") {
+            place_of_birth.innerHTML = "<strong>Local de Nascimento</strong>: <br>Indisponivel";
+            div_more_informations.appendChild(place_of_birth)
+        } else {
+            place_of_birth.innerHTML = `<strong>Local de Nascimento</strong>: <br>${dadosAtor.place_of_birth}`;
+            div_more_informations.appendChild(place_of_birth)
+        }
+
+        if (dadosAtor.birthday == null || dadosAtor.birthday == "") {
+            birthday_actor.innerHTML = `<strong>Nascimento</strong>: <br>Indisponivel`;
+        } else {
+            birthday_actor.innerHTML = `<strong>Nascimento</strong>: <br>${dadosAtor.birthday}`;
+        }
+
+        div_more_informations.appendChild(birthday_actor)
+
+        const generos = ['Não-binário', 'Feminino', "Masculino"];
+
+        if (dadosAtor.gender === 0) {
+            gender_actor.innerHTML =  `<strong>Genêro</strong>: <br>${generos[0]}`
+            div_more_informations.appendChild(gender_actor)
+        }else if (dadosAtor.gender === 1){
+            gender_actor.innerHTML =  `<strong>Genêro</strong>: <br>${generos[1]}`
+            div_more_informations.appendChild(gender_actor)
+        }else if(dadosAtor.gender === 2){
+            gender_actor.innerHTML =  `<strong>Genêro</strong>: <br>${generos[2]}`
+            div_more_informations.appendChild(gender_actor)
+        } else {
+            gender_actor.innerHTML =  `<strong>Genêro</strong>: <br>Indisponivel`
+            div_more_informations.appendChild(gender_actor)
+        }
+
+       
         
         //const paginaHTML = ;
         // Exibir a página HTML na janela do navegador

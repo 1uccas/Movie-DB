@@ -4,6 +4,8 @@
 body{
     background-color: black;
     color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
 }
 #grid-container {
     display: grid;
