@@ -11,7 +11,7 @@ document.write(
             font-size: 45px;
             text-align: center;
             padding: 1rem;
-            margin-bottom: 50px;
+            margin-bottom: 30px;
             color: black;
             font-weight: 400;
         }

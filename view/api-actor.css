@@ -75,7 +75,7 @@ body{
 #movies{
     overflow: hidden;
     width: 150px;
-    height: 330px;
+    height: 350px;
     margin-top: 3rem;
     display: flex;
     flex-direction: column;
