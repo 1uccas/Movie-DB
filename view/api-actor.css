@@ -96,3 +96,52 @@ body{
     display: block;
     text-align: center;
 }
+
+@media screen and (max-width: 800px){
+    #container{
+        display: flex;
+        flex-direction: column;
+    }
+    #box-actor{
+        display: flex;
+        flex-direction: column;
+        float: left;
+        height: auto;
+        overflow-y: hidden;
+        overflow-x: hidden;
+    }
+    #name-actor{
+        text-align: center;
+    }
+    #text-biography{
+        margin-left: 1rem;
+    }
+    #div-biography{
+        height: auto;
+        width: auto;
+        margin-right: 2rem;
+        margin-left: 1rem;
+    }
+    #container-more-informations{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        
+    }
+    #more-informations{
+        position: relative;
+        margin-top: 2rem;
+        margin-left: 10px;
+        margin-right: 160px;
+    }
+
+    #div-acting{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 2fr));
+        grid-gap: 20px;
+        justify-items: center;
+        align-items: center;
+        margin-right: 5rem;
+    }
+}
