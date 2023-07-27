@@ -33,7 +33,7 @@ body{
 .grid-item img {
     border-radius: 5px;
     width: 180px;
-    height: auto;
+    height: 270px;
 }
 #pagination a:hover{
     color: rgb(70, 70, 233);
