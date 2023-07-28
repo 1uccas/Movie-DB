@@ -47,7 +47,6 @@ body{
     margin-right: 1120px;
     margin-left: 150px;
     height: auto;
-    min-width: 300px;
     width: 300px;
 }
 #more-informations label{
@@ -128,10 +127,17 @@ body{
         height: auto;
     }
     #container-more-informations{
+        align-items: center;
+        font-size: medium;
         display: flex;
         flex-direction: column;
-        align-items: center;
         justify-content: center;
+        margin-right: 1120px;
+        margin-top: 2rem;
+        margin-left: 140px;
+        margin-bottom: 2rem;
+        height: 200px;
+        width: 200px;
         
     }
     #more-informations{
