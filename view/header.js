@@ -1,7 +1,11 @@
 document.write(
     `
     <style>
-    @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Dancing+Script:wght@700&family=Fruktur&family=Give+You+Glory&family=Lobster&family=Nanum+Pen+Script&family=Oswald:wght@300;400&family=Patrick+Hand&family=Roboto:wght@300&family=Shadows+Into+Light&family=Sriracha&display=swap');
+        @font-face{
+            font-family: 'Lobster';
+            src: url('/font/Lobster/Lobster-Regular.ttf') format('truetype');
+        }
+        
   
         body{
             padding: 0;
