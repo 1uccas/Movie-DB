@@ -9,7 +9,7 @@ document.write(
     </style>
     
     <div id="footer-box-container">
-        <footer>&copy Todos os direitos reservados - 2023</footer>
+        <footer>&copy Box Actors - Todos os direitos reservados - 2023</footer>
     </div>
     `
 )
