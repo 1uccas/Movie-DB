@@ -110,9 +110,6 @@ body{
         width: 300px;
         height: auto;
     }
-    #text-biography{
-        margin-left: 1rem;
-    }
     #picture-actor{
         margin-left: 1rem;
     }
@@ -127,7 +124,7 @@ body{
         height: auto;
         width: auto;
         margin-right: 2rem;
-        margin-left: 1rem;
+        margin-left: 0rem;
     }
 
     #container-more-informations{
