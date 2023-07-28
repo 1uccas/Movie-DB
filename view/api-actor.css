@@ -122,6 +122,11 @@ body{
         margin-right: 2rem;
         margin-left: 1rem;
     }
+
+    #container img{
+        width: 250px;
+        height: auto;
+    }
     #container-more-informations{
         display: flex;
         flex-direction: column;
