@@ -96,6 +96,68 @@ body{
     text-align: center;
 }
 
+@media screen and (min-width: 801px) and (max-width: 1305px){
+    
+    #div-acting{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 2fr));
+        grid-gap: 20px;
+        justify-items: center;
+        align-items: center;
+        margin-right: 5rem;
+    }
+    #container img{
+        width: 300px;
+        height: auto;
+    }
+    #text-biography{
+        margin-left: 1rem;
+    }
+    #picture-actor{
+        margin-left: 1rem;
+    }
+    #box-actor{
+        float: left;
+        height: auto;
+        overflow-x: hidden;
+        width: auto;
+        height: 510px;
+    }
+    #div-biography{
+        height: auto;
+        width: auto;
+        margin-right: 2rem;
+        margin-left: 1rem;
+    }
+
+    #container-more-informations{
+        align-items: center;
+        font-size: medium;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-right: 1120px;
+        margin-left: 140px;
+        margin-bottom: 2rem;
+        height: 200px;
+        width: 200px;
+        
+    }
+    #more-informations{
+        position: relative;
+        margin-top: 2rem;
+        margin-left: 10px;
+        margin-right: 160px;
+    }
+    
+    #biography h2{
+        margin-left: 0rem;
+        margin-right: 1rem;
+        line-height: 1.5;
+    }
+    
+}
+
 @media screen and (max-width: 800px){
     #container{
         display: flex;
@@ -154,5 +216,15 @@ body{
         justify-items: center;
         align-items: center;
         margin-right: 5rem;
+    }
+    #biography{
+        padding-bottom: 50px;
+    }
+    #biography h2{
+        font-size: 24px;
+        margin-left: 1rem;
+        margin-right: 1.6rem;
+        text-align: center;
+        line-height: 1.5;
     }
 }
