@@ -155,7 +155,7 @@ body{
     
 }
 
-@media screen and (max-width: 800px){
+@media screen and (min-width: 100px) and (max-width: 800px){
     #container{
         display: flex;
         flex-direction: column;
@@ -215,7 +215,7 @@ body{
         margin-right: 5rem;
     }
     #biography{
-        padding-bottom: 50px;
+        padding-bottom: 60px;
     }
     #biography h2{
         font-size: 24px;
@@ -223,5 +223,8 @@ body{
         margin-right: 1.6rem;
         text-align: center;
         line-height: 1.5;
+    }
+    #footer-box-container{
+        font-size: 10px;
     }
 }
