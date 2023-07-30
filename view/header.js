@@ -5,8 +5,7 @@ document.write(
             font-family: 'Lobster';
             src: url('/font/Lobster/Lobster-Regular.ttf') format('truetype');
         }
-        
-  
+
         body{
             padding: 0;
             margin: 0;
@@ -33,7 +32,7 @@ document.write(
     </style>
 
     <div id="header-box-container">
-        <header><img src="/image/header-image/box.png"></img> Actors Box</header>
+        <header><a href='/index.html'><img src="/image/header-image/box.png"></img></a> Actors Box</header>
     </div>
     `
 )
