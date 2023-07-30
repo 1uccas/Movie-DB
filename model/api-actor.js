@@ -85,13 +85,12 @@ fetch(`https://api.themoviedb.org/3/person/${id_actor}?language=pt-BR`, options)
             div_more_informations.appendChild(place_of_birth)
         }
 
-        let Year_birthday_actor = (dadosAtor.birthday).split('-');
-        let Date_now = new Date().getFullYear();
-        let Years_old_actor = (Date_now - Year_birthday_actor[0]);
-
         if (dadosAtor.birthday == null || dadosAtor.birthday == "") {
             birthday_actor.innerHTML = `<strong>Nascimento</strong>: <br>Indisponivel`;
         } else {
+            let Year_birthday_actor = (dadosAtor.birthday).split('-');
+            let Date_now = new Date().getFullYear();
+            let Years_old_actor = (Date_now - Year_birthday_actor[0]);
             birthday_actor.innerHTML = `<strong>Nascimento</strong>: <br>${dadosAtor.birthday} (${Years_old_actor} anos)`;
         }
 
