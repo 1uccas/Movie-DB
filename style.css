@@ -88,12 +88,7 @@ body{
         display: none;
     }
     #grid-container{
-        grid-template-columns: repeat(auto-fit, minmax(180px, 2fr));
-    }
-    .grid-item img {
-        border-radius: 5px;
-        width: 120px;
-        height: 200px;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     }
     #pagination a, #last, #first{
         font-size: 15px;
