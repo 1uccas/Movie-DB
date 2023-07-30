@@ -77,13 +77,28 @@ body{
 #pagination{
     text-align: center;
 }
+#footer-box-container{
+    font-size: 10px;
+}
 
 
-@media screen and (max-width: 799px){
+
+@media screen and (min-width: 300px) and (max-width: 800px){
     #number-button a{
         display: none;
     }
     #grid-container{
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(180px, 2fr));
+    }
+    .grid-item img {
+        border-radius: 5px;
+        width: 120px;
+        height: 200px;
+    }
+    #pagination a, #last, #first{
+        font-size: 15px;
+    }
+    #footer-box-container{
+        font-size: 10px;
     }
 }
