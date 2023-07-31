@@ -123,6 +123,9 @@ body{
     justify-content: center;
     text-align: justify;
 }
+#footer-box-container{
+    font-size: 10px;
+}
 
 @media screen and (min-width: 801px) and (max-width: 1305px){
     
@@ -183,7 +186,7 @@ body{
     
 }
 
-@media screen and (max-width: 800px){
+@media screen and (min-width: 300px) and (max-width: 800px){
     #container{
         display: flex;
         flex-direction: column;
@@ -243,7 +246,7 @@ body{
         margin-right: 5rem;
     }
     #biography{
-        padding-bottom: 50px;
+        padding-bottom: 60px;
     }
     #biography h2{
         font-size: 24px;
@@ -251,5 +254,9 @@ body{
         margin-right: 1.6rem;
         text-align: center;
         line-height: 1.5;
+    }
+    #div-informations-movie{
+        width: 250px;
+        font-size: small;
     }
 }
