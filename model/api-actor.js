@@ -178,81 +178,30 @@ fetch(
       const data_characters = data_movies.cast;
 
       data_characters.forEach((characters) => {
-        //console.log(characters.original_title);
+
         const Object_Movies = {
-          title: characters.title ? characters.title : characters.original_name ? characters.original_name : " ❔ ",
-          date: characters.release_date ? characters.release_date : characters.first_air_date ? characters.first_air_date : " ❔ ",
-          character: characters.character ? characters.character : " ❔ "
-        };
+            title: characters.title ? characters.title : characters.original_name ? characters.original_name : " ❔ ",
+            date: characters.release_date ? characters.release_date : characters.first_air_date ? characters.first_air_date : " ❔ ",
+            character: characters.character ? characters.character : " ❔ "
+          };
+  
+          const Date_Handling = Object_Movies.date.split("-")[0];
+  
+          try {
+            const Not_Testing_All = `
+            <div id="box-informations-movies">
+              <label id="text-title-date-movies">${Date_Handling} - ${Object_Movies.title}</label>
+              <label id="text-character-movies">🎬 como ${Object_Movies.character}</label>
+              <br>
+            </div>
+            <hr>`;
+            Informations_Movie.innerHTML += Not_Testing_All;
+            All_Movies.appendChild(Informations_Movie);
+          } catch (error) {
+            Informations_Movie.innerHTML += `${error.message}`;
+            All_Movies.appendChild(Informations_Movie);
+          }
 
-        const Date_Handling = Object_Movies.date.split("-")[0];
-
-        try {
-          const Not_Testing_All = `
-          <div id="box-informations-movies">
-            <label id="text-title-date-movies">${Date_Handling} - ${Object_Movies.title}</label>
-            <label id="text-character-movies">🎬 como ${Object_Movies.character}</label>
-            <br>
-          </div>
-          <hr>`;
-          Informations_Movie.innerHTML += Not_Testing_All;
-          All_Movies.appendChild(Informations_Movie);
-        } catch (error) {
-          Informations_Movie.innerHTML += `${error.message}`;
-          All_Movies.appendChild(Informations_Movie);
-        }
-
-        /*
-                if (characters.title == null || characters.title == "") {
-                    try {
-                        const Label_Title = `<label>${characters.original_name}</label><br>`;
-                        Informations_Movie.innerHTML += Label_Title;
-                        All_Movies.appendChild(Informations_Movie);
-                    } catch (error) {
-                        const Label_Title_Error = `<label>Filme Indisponivel</label><br>`;
-                        Informations_Movie.innerHTML += Label_Title_Error;
-                        All_Movies.appendChild(Informations_Movie);
-                    }
-                } else {
-                    const Label_Title = `<label>${characters.title}</label><br>`;
-                    Informations_Movie.innerHTML += Label_Title;
-                    All_Movies.appendChild(Informations_Movie);
-                }
-                
-                if (characters.release_date == null || characters.release_date == "") {
-                    try {
-                        const Label_Date = `<label>Data - ${characters.first_air_date}<br></label>`
-                        Informations_Movie.innerHTML += Label_Date;
-                        All_Movies.appendChild(Informations_Movie);
-                    } catch (error) {
-                        const Label_Date_Error = `<label>Data - Indisponivel</label><br>`
-                        Informations_Movie.innerHTML += Label_Date_Error;
-                        All_Movies.appendChild(Informations_Movie);
-                    }
-                } else {
-                    const Label_Date = `<label>Data - ${characters.release_date}<br></label>`
-                    Informations_Movie.innerHTML += Label_Date;
-                    All_Movies.appendChild(Informations_Movie);
-                }
-
-                if (characters.character == null || characters.character == "") {
-                    try {
-                        const Label_Character = `<label>Personagem - ${characters.character}<br><br></label>`
-                        Informations_Movie.innerHTML += Label_Character;
-                        All_Movies.appendChild(Informations_Movie);
-                    } catch (error) {
-                        const Label_Character_Error = `<label>Personagem - Indisponivel<br><br></label>`
-                        Informations_Movie.innerHTML += Label_Character;
-                        All_Movies.appendChild(Informations_Movie);
-                    }
-                } else {
-                    const Label_Character = `<label>Personagem - ${characters.character}<br><br></label>`
-                    Informations_Movie.innerHTML += Label_Character;
-                    All_Movies.appendChild(Informations_Movie);
-                }
-                */
-
-        //Personagem -> como ${characters.character}
       });
     } else {
       console.log("Nenhum filme encontrado para este ator.");
