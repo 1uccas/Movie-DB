@@ -125,7 +125,6 @@ fetch(`https://api.themoviedb.org/3/person/${id_actor}/combined_credits?language
        
 
         if (data_movies.cast && Array.isArray(data_movies.cast) && data_movies.cast.length > 0) {
-            // Suponha que você tenha uma lista de filmes da API chamada 'movies' com objetos que possuem título e contagem de votos.
             const movies = data_movies.cast;
             const div_acting = document.getElementById('div-acting');
 
@@ -154,10 +153,95 @@ fetch(`https://api.themoviedb.org/3/person/${id_actor}/combined_credits?language
                 </div>
                 `;
                 div_acting.innerHTML += pgHTML;
+                }
+
             }
 
-            //console.log(`Contagem de Votos do ${title} -> ${movies[movie].vote_count}`);
-            }
+            //DIV-CHARACTERS-MOVIE
+            const All_Movies = document.querySelector('#div-all-movies');        
+            const Informations_Movie = document.querySelector('#div-informations-movie');
+
+            const data_characters = data_movies.cast;
+            
+            data_characters.forEach(characters => {
+                //console.log(characters.original_title);
+                const Object_Movies = {
+                    title: [
+                        characters.title,
+                        characters.original_name
+                    ],
+                    date: [
+                        characters.release_date,
+                        characters.first_air_date
+                    ]
+                }
+
+                
+
+                try{
+                    const Not_Testing_All =  `<label>${Object_Movies.date[0]} - ${Object_Movies.title[0]} - ${characters.character}<br><br>`;
+                    Informations_Movie.innerHTML += Not_Testing_All;
+                    All_Movies.appendChild(Informations_Movie);
+                    
+                }catch(error){
+                    Informations_Movie.innerHTML += `${error.message}`;
+                    All_Movies.appendChild(Informations_Movie);
+                }
+
+
+
+                /*
+                if (characters.title == null || characters.title == "") {
+                    try {
+                        const Label_Title = `<label>${characters.original_name}</label><br>`;
+                        Informations_Movie.innerHTML += Label_Title;
+                        All_Movies.appendChild(Informations_Movie);
+                    } catch (error) {
+                        const Label_Title_Error = `<label>Filme Indisponivel</label><br>`;
+                        Informations_Movie.innerHTML += Label_Title_Error;
+                        All_Movies.appendChild(Informations_Movie);
+                    }
+                } else {
+                    const Label_Title = `<label>${characters.title}</label><br>`;
+                    Informations_Movie.innerHTML += Label_Title;
+                    All_Movies.appendChild(Informations_Movie);
+                }
+                
+                if (characters.release_date == null || characters.release_date == "") {
+                    try {
+                        const Label_Date = `<label>Data - ${characters.first_air_date}<br></label>`
+                        Informations_Movie.innerHTML += Label_Date;
+                        All_Movies.appendChild(Informations_Movie);
+                    } catch (error) {
+                        const Label_Date_Error = `<label>Data - Indisponivel</label><br>`
+                        Informations_Movie.innerHTML += Label_Date_Error;
+                        All_Movies.appendChild(Informations_Movie);
+                    }
+                } else {
+                    const Label_Date = `<label>Data - ${characters.release_date}<br></label>`
+                    Informations_Movie.innerHTML += Label_Date;
+                    All_Movies.appendChild(Informations_Movie);
+                }
+
+                if (characters.character == null || characters.character == "") {
+                    try {
+                        const Label_Character = `<label>Personagem - ${characters.character}<br><br></label>`
+                        Informations_Movie.innerHTML += Label_Character;
+                        All_Movies.appendChild(Informations_Movie);
+                    } catch (error) {
+                        const Label_Character_Error = `<label>Personagem - Indisponivel<br><br></label>`
+                        Informations_Movie.innerHTML += Label_Character;
+                        All_Movies.appendChild(Informations_Movie);
+                    }
+                } else {
+                    const Label_Character = `<label>Personagem - ${characters.character}<br><br></label>`
+                    Informations_Movie.innerHTML += Label_Character;
+                    All_Movies.appendChild(Informations_Movie);
+                }
+                */
+
+                //Personagem -> como ${characters.character}
+            });
 
           } else {
             console.log('Nenhum filme encontrado para este ator.');
@@ -165,6 +249,8 @@ fetch(`https://api.themoviedb.org/3/person/${id_actor}/combined_credits?language
           }
           console.log(data_movies)
         })
+
+        
     .catch(error => {
     console.error('Erro ao obter os dados do ator:', error);
     });
