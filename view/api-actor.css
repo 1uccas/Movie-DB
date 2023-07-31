@@ -35,6 +35,23 @@ body{
     width: auto;
     height: 510px;
 }
+#div-informations-movie{
+    width: 400px;
+    padding: 20px;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 10px;
+}
+#text-character-movies{
+    margin-left: 25px;
+}
+#box-informations-movies{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    text-align: left;
+    justify-content: center;
+    margin-bottom: -20px;
+}
 #container-more-informations{
     display: flex;
     flex-direction: column;
@@ -104,6 +121,7 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-align: justify;
 }
 
 @media screen and (min-width: 801px) and (max-width: 1305px){
