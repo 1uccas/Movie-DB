@@ -188,14 +188,14 @@ fetch(
           const Date_Handling = Object_Movies.date.split("-")[0];
   
           try {
-            const Not_Testing_All = `
+            const Div_Box_Informations = `
             <div id="box-informations-movies">
               <label id="text-title-date-movies">${Date_Handling} - ${Object_Movies.title}</label>
               <label id="text-character-movies">🎬 como ${Object_Movies.character}</label>
               <br>
             </div>
             <hr>`;
-            Informations_Movie.innerHTML += Not_Testing_All;
+            Informations_Movie.innerHTML += Div_Box_Informations;
             All_Movies.appendChild(Informations_Movie);
           } catch (error) {
             Informations_Movie.innerHTML += `${error.message}`;
